@@ -27,15 +27,18 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do |example|
-    if ENV['host'] == 'saucelabs'
-      if example.exception.nil?
-        SauceWhisk::Jobs.pass_job @driver.session_id
-      else
-        SauceWhisk::Jobs.fail_job @driver.session_id
+    begin
+      if ENV['host'] == 'saucelabs'
+        if example.exception.nil?
+          SauceWhisk::Jobs.pass_job @driver.session_id
+        else
+          SauceWhisk::Jobs.fail_job @driver.session_id
+          raise "Watch a video of the test at https://saucelabs.com/tests/#{@driver.session_id}"
+        end
       end
+    ensure
+      @driver.quit
     end
-    
-    @driver.quit
   end
 
 end
