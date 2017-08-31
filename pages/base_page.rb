@@ -20,6 +20,14 @@ class BasePage
     find(locator).click
   end
 
+  def is_selected?(locator)
+    begin
+      find(locator).selected?
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      false
+    end
+  end
+
   def is_displayed?(locator)
     begin
       find(locator).displayed?
