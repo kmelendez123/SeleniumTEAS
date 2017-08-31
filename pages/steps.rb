@@ -31,15 +31,15 @@ class Steps < BasePage
 
   def check_entity_information?
     click ENTITY_INDIVIDUAL
-    is_selected? ENTITY_INDIVIDUAL
+    wait_for(3) { is_selected? ENTITY_INDIVIDUAL }
     wait_for(3) { is_displayed? INDIVIDUAL_LABEL }
 
     click ENTITY_CORPORATION
-    is_selected? ENTITY_CORPORATION
+    wait_for(3) { is_selected? ENTITY_CORPORATION }
     wait_for(3) { is_displayed? CORPORATION_LABEL }
 
     click ENTITY_PARTNERSHIP
-    is_selected? ENTITY_PARTNERSHIP
+    wait_for(3) { is_selected? ENTITY_PARTNERSHIP }
     wait_for(3) { is_displayed? PARTNERSHIP_LABEL }
   end
 
