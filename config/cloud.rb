@@ -1,6 +1,6 @@
 require 'sauce_whisk'
 
-ENV['base_url']         ||= 'http://the-internet.herokuapp.com'
+ENV['base_url']         ||= 'https://teas.uspto.gov/forms'
 ENV['host']             = 'saucelabs'
 ENV['operating_system'] ||= 'Windows XP'
 ENV['browser']          ||= 'internet_explorer'
