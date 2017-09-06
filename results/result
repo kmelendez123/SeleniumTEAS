@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="3" failures="0" errors="0" time="8.025784" timestamp="2017-09-06T12:35:52-04:00">
+  <!-- Randomized with seed 17514 -->
+  <properties/>
+  <testcase classname="spec.steps_spec" name="Steps goes through form and returns validation error" file="./spec/steps_spec.rb" time="2.823091"/>
+  <testcase classname="spec.steps_spec" name="Steps should prompt the correct field label per entity value" file="./spec/steps_spec.rb" time="3.379266"/>
+  <testcase classname="spec.steps_spec" name="Steps Visits the teas page and checks role" file="./spec/steps_spec.rb" time="1.822520"/>
+</testsuite>

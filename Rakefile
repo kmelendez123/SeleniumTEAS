@@ -1,7 +1,12 @@
 #filename: Rakefile
 
 def launch_with(config_filename)
-  system("parallel_rspec --test-options '-r ./config/#{config_filename} --order random' spec")
+  if ENV['tag']
+    test_options = "-r ./config/#{config_filename} --order random --tag #{ENV['tag']}"
+  else
+    test_options = "-r ./config/#{config_filename} --order random"
+  end
+  system("parallel_rspec --test-options '#{test_options}' spec")
 end
 
 desc 'Run tests locally'
