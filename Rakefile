@@ -2,9 +2,9 @@
 
 def launch_with(config_filename)
   if ENV['tag']
-    test_options = "-fd -r ./config/#{config_filename} --order random --tag #{ENV['tag']}"
+    test_options = "-r ./config/#{config_filename} --order random --tag #{ENV['tag']}"
   else
-    test_options = "-fd -r ./config/#{config_filename} --order random"
+    test_options = "-r ./config/#{config_filename} --order random"
   end
   system("parallel_rspec --test-options '#{test_options}' spec")
 end
